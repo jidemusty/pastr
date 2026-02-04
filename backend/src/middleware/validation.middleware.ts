@@ -8,7 +8,7 @@ const createPasteSchema = z.object({
   expiresIn: z.enum(['1hr', 'id', '1w', 'never']).optional()
 });
 
-export const validateCreatePaste = (req: Request, next: NextFunction): void => {
+export const validateCreatePaste = (req: Request, res: Response, next: NextFunction): void => {
   try {
     createPasteSchema.parse(req.body);
     next()
