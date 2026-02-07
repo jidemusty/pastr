@@ -1,7 +1,9 @@
 import type { CreatePasteRequest, PasteResponse } from "./types";
 
-const API_BASE_URL =
+const BASE_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3001/api";
+
+const API_BASE_URL = `${BASE_URL}/api`;
 
 export const pasteApi = {
   create: async (data: CreatePasteRequest): Promise<PasteResponse> => {
