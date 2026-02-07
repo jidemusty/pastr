@@ -2,13 +2,13 @@ export interface CreatePasteRequest {
   title?: string;
   content: string;
   language?: string;
-  expiresIn: '1hr' | '1d' | '1w' | '1m' | 'never'
+  expiresIn: "1hr" | "1d" | "1w" | "1m" | "never";
 }
 
 export interface PasteResponse {
   id: string;
   shortId: string;
-  title?: string;
+  title?: string | null;
   content: string;
   language?: string;
   expiresAt: Date | null;

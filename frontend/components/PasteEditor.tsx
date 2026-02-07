@@ -132,10 +132,10 @@ export default function PasteEditor() {
           </span>
         </div>
         <div className="editor-statusbar-right">
-          {formData.language?.toUpperCase()} ·{" "}
-          {formData.expiresIn === "never"
+          {(formData.language ?? "text").toUpperCase()} ·{" "}
+          {(formData.expiresIn ?? "never") === "never"
             ? "NO EXPIRATION"
-            : `EXPIRES IN ${formData.expiresIn?.toUpperCase()}`}
+            : `EXPIRES IN ${(formData.expiresIn ?? "never").toUpperCase()}`}
         </div>
       </div>
 

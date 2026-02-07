@@ -1,9 +1,10 @@
 import Link from "next/link";
 import type { PasteResponse } from "@/lib/types";
+import { getApiUrl } from "@/lib/env";
 
 async function getAllPastes() {
   try {
-    const res = await fetch("http://localhost:3001/api/pastes/list", {
+    const res = await fetch(getApiUrl(`/api/pastes/list`), {
       cache: "no-store",
     });
 
