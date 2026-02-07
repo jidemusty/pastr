@@ -1,10 +1,11 @@
 import PasteViewer from "@/components/PasteViewer";
 import { highlightCode } from "@/lib/highlighter";
 import { notFound } from "next/navigation";
+import { getApiUrl } from "@/lib/env";
 
 async function getPaste(shortId: string) {
   try {
-    const res = await fetch(`http://localhost:3001/api/pastes/${shortId}`, {
+    const res = await fetch(getApiUrl(`/api/pastes/${shortId}`), {
       cache: "no-store",
     });
 
